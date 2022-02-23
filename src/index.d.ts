@@ -1,18 +1,18 @@
 import { SvelteComponentTyped } from 'svelte'
 import { Writable } from 'svelte/store'
 
-interface Route {
+export interface Route {
   path: string,
   query: { [key: string]: any },
   fragment: { [key: string]: any },
   toString: () => string
 }
 
-interface RouteStore<T> extends Writable<T> {
+export interface RouteStore<T> extends Writable<T> {
   goto: (url: string) => void
 }
 
-interface RouteStoreOptions {
+export interface RouteStoreOptions {
   href?: string,
   sideEffect?: boolean,
   handleNavigation?: boolean,
